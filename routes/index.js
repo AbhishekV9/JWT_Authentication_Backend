@@ -2,6 +2,8 @@ const express=require("express");
 const router=express.Router();
 
 const userController=require("../controller/userController");
-router.get('/register',userController.registerUser);
+router.post('/register',userController.registerUser);
+router.get('/login',userController.createsession);
+
 
 module.exports=router;
