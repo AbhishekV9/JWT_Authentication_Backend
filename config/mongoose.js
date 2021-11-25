@@ -1,13 +1,12 @@
 const mongoose=require('mongoose');
+const uri='mongodb+srv://avishekv99:zocket@cluster0.kxpuk.mongodb.net/JWT-AUTH?retryWrites=true&w=majority'
 
-mongoose.connect('mongodb://localhost/Auth-backend');
+mongoose
+  .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    console.log('Connected to Atlas database ');
+  })
+  .catch((err) => {
+    console.error(`Error connecting to the database. \n${err}`);
+  });
 
-const db=mongoose.connection;
-
-db.on('error',console.error.bind('Error connecting to MongoDB'));
-
-db.once('open',function(){
-    console.log('Connected to Database :: MongoDB');
-});
-
-module.exports=db;
