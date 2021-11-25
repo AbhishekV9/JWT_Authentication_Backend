@@ -6,7 +6,7 @@ const User=require('../model/user');
 
 let opts={
     jwtFromRequest:ExtractJWT.fromAuthHeaderAsBearerToken(),
-    secretOrKey:'Abhishek99HospitalAPI'
+    secretOrKey:'Abhishek99vumonicDatalabs99'
 }
 
 passport.use(new jWTStrategy(opts,function(jwt_payload,done){

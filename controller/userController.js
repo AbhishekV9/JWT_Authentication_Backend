@@ -42,7 +42,7 @@ module.exports.createsession=async function(req,res){
           //otherwise signing in the User and return a token that expires in 1 hr
           return res.status(200).json({
             message:"Sign_In Successfull",
-            token:jwt.sign(user.toJSON(),'Abhishek99HospitalAPI',{ expiresIn: '3600000'}),
+            token:jwt.sign(user.toJSON(),'Abhishek99vumonicDatalabs99',{ expiresIn: '3600000'}),
             user
           })
     } catch (error) {
@@ -62,7 +62,7 @@ module.exports.createsession=async function(req,res){
         const token = userJWTToken.split(' ');
         
         //decoding token
-        const decoded = jwt.verify(token[1],'Abhishek99HospitalAPI');
+        const decoded = jwt.verify(token[1],'Abhishek99vumonicDatalabs99');
         
         //finding doctor with the id from decoded
         const user=await User.findById(decoded._id);
