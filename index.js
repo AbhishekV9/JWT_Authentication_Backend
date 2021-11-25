@@ -7,6 +7,7 @@ const cors=require("cors");
 //Used passport for authentication purpose and the strategy use is JWT strategy
 const passport=require('passport');
 const passportJWT=require('./config/passport-jwt');
+app.use(passport.initialize());
 
 //mongoose connection
 const db=require("./config/mongoose");

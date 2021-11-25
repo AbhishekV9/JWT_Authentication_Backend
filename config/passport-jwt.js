@@ -6,7 +6,7 @@ const User=require('../model/user');
 
 let opts={
     jwtFromRequest:ExtractJWT.fromAuthHeaderAsBearerToken(),
-    secretOrKey:'vumonicDatalabs'
+    secretOrKey:'Abhishek99HospitalAPI'
 }
 
 passport.use(new jWTStrategy(opts,function(jwt_payload,done){
@@ -14,8 +14,8 @@ passport.use(new jWTStrategy(opts,function(jwt_payload,done){
         if(err){
             console.log("Error in finding user from JWT:",err);
         }
-        if(doctor){
-           return done(null,doctor);
+        if(user){
+           return done(null,user);
         }else{
             return done(null,false);
         }
